@@ -5,12 +5,16 @@ import java.time.LocalDate;
 /* audacious one - 21.04.2023 */
 public class Booking {
 
+	private static int bookingCount = 0;
+
+	private int bookingNo;
 	private Customer customer;
 	private Room room;
 	private LocalDate startDate;
 	private LocalDate endDate;
 
 	public Booking(Customer customer, Room room, LocalDate startDate, LocalDate endDate) {
+		this.bookingNo = bookingCount++;
 		this.customer = customer;
 		this.room = room;
 		this.startDate = startDate;
@@ -45,4 +49,6 @@ public class Booking {
 	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
+
+	public int getBookingNo() { return this.bookingNo; }
 }
